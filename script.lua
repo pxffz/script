@@ -4,20 +4,20 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- Create Window
 local Window = Rayfield:CreateWindow({
     Name = "COPD OP GUI 🔥",
-    Icon = "flame", -- Must be a string if using Lucide icons
+    Icon = "flame", -- Lucide icon string
     LoadingTitle = "C0PD OP GUI 🔥",
     LoadingSubtitle = "Made By MZT3R",
     ShowText = "HIDE or SHOW",
     Theme = "Amethyst",
 
-    ToggleUIKeybind = "X", -- Key to toggle GUI
+    ToggleUIKeybind = "X",
 
     DisableRayfieldPrompts = false,
     DisableBuildWarnings = false,
 
     ConfigurationSaving = {
         Enabled = true,
-        FolderName = "C0PD_OP_GUI_Folder", -- must be a string
+        FolderName = "C0PD_OP_GUI_Folder",
         FileName = "C0PD OP GUI 🔥"
     },
 
@@ -27,24 +27,37 @@ local Window = Rayfield:CreateWindow({
         RememberJoins = true
     },
 
-    KeySystem = true, -- Enable key system
+    KeySystem = true,
     KeySettings = {
         Title = "Key System",
         Subtitle = "Key System For C0PD GUI OP 🔥",
         Note = "Get Key In ScriptBlox Description! 💫",
         FileName = "KEY",
         SaveKey = true,
-        GrabKeyFromSite = false, -- Only true if Key is a RAW URL
-        Key = {"dedend"} -- List of accepted keys
+        GrabKeyFromSite = false,
+        Key = {"dedend"}
     }
 })
 
--- Create Tabs and Sections
+-- === HOME TAB ===
 local HomeTab = Window:CreateTab("HOME", "house")
-local HomeSection = HomeTab:CreateSection("HOME")
+
+-- Welcome Section
+local WelcomeSection = HomeTab:CreateSection("WELCOME")
+WelcomeSection:CreateLabel("Welcome To C0PD GUI! In Here We Got Lots Of OP Scripts That You Can Choose From! Please Remember, This Script GUI Is Made For Educational Purposes and Should Not Be Used To Harm Other Games. Thank You For Reading!")
+
+-- Credits Section
+local CreditsSection = HomeTab:CreateSection("CREDITS")
+CreditsSection:CreateLabel("CREDITS GOES TO Bitzy4Eva ON ROBLOX FOR MAKING THIS!")
+
+-- === EXAMPLE TAB ===
+local MainTab = Window:CreateTab("MAIN", "settings") -- you can rename this tab
+
+-- Example Section
+local MainSection = MainTab:CreateSection("EXAMPLES")
 
 -- Example Button
-HomeSection:CreateButton({
+MainSection:CreateButton({
     Name = "Example Button",
     Callback = function()
         Rayfield:Notify({
@@ -56,7 +69,7 @@ HomeSection:CreateButton({
 })
 
 -- Example Toggle
-HomeSection:CreateToggle({
+MainSection:CreateToggle({
     Name = "Example Toggle",
     CurrentValue = false,
     Flag = "ExampleToggle",
@@ -70,7 +83,7 @@ HomeSection:CreateToggle({
 })
 
 -- Example Slider
-HomeSection:CreateSlider({
+MainSection:CreateSlider({
     Name = "Example Slider",
     Range = {0, 100},
     Increment = 1,
@@ -80,4 +93,11 @@ HomeSection:CreateSlider({
     Callback = function(value)
         print("Slider set to:", value)
     end
+})
+
+-- Optional: Notify that GUI is loaded
+Rayfield:Notify({
+    Title = "C0PD OP GUI 🔥",
+    Content = "GUI successfully loaded!",
+    Duration = 3
 })
