@@ -1,3 +1,5 @@
+-- if this works then its awesome!
+
 -- Load Rayfield
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
@@ -50,8 +52,8 @@ WelcomeSection:CreateLabel("Welcome To C0PD GUI! In Here We Got Lots Of OP Scrip
 local CreditsSection = HomeTab:CreateSection("CREDITS")
 CreditsSection:CreateLabel("CREDITS GOES TO Bitzy4Eva ON ROBLOX FOR MAKING THIS!")
 
--- === EXAMPLE TAB ===
-local MainTab = Window:CreateTab("MAIN", "settings") -- you can rename this tab
+-- === MAIN TAB ===
+local MainTab = Window:CreateTab("MAIN", "settings") -- example tab
 
 -- Example Section
 local MainSection = MainTab:CreateSection("EXAMPLES")
@@ -95,7 +97,7 @@ MainSection:CreateSlider({
     end
 })
 
--- Optional: Notify that GUI is loaded
+-- Notify when GUI is loaded
 Rayfield:Notify({
     Title = "C0PD OP GUI 🔥",
     Content = "GUI successfully loaded!",
